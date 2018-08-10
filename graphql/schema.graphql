@@ -1,0 +1,10 @@
+type Todo {
+	id: String!
+	text: String!
+	user: User!
+}
+
+type User {
+	id: String!
+	name: String!
+}
