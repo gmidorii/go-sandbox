@@ -1,0 +1,199 @@
+dtrace: system integrity protection is on, some features will not be available
+SYSCALL(args) 		 = return
+vim-go
+dtrace: error on enabled probe ID 2198 (ID 557: syscall::sysctl:return): invalid kernel access in action #10 at DIF offset 28
+dtrace: error on enabled probe ID 2198 (ID 557: syscall::sysctl:return): invalid kernel access in action #10 at DIF offset 28
+dtrace: error on enabled probe ID 2174 (ID 159: syscall::read:return): invalid kernel access in action #12 at DIF offset 68
+open("/dev/dtracehelper\0", 0x2, 0xFFFFFFFFEFBFEF80)		 = 3 0
+ioctl(0x3, 0x80086804, 0x7FFEEFBFED90)		 = 0 0
+close(0x3)		 = 0 0
+access("/AppleInternal/XBS/.isChrooted\0", 0x0, 0x0)		 = -1 Err#2
+bsdthread_register(0x7FFF6BC4E418, 0x7FFF6BC4E408, 0x2000)		 = 1073742047 0
+sysctlbyname(kern.bootargs, 0xD, 0x7FFEEFBFE1E0, 0x7FFEEFBFE1D8, 0x0)		 = 0 0
+issetugid(0x0, 0x0, 0x0)		 = 0 0
+ioctl(0x2, 0x4004667A, 0x7FFEEFBFD9F4)		 = -1 Err#25
+ioctl(0x2, 0x40487413, 0x7FFEEFBFD9F8)		 = -1 Err#25
+mprotect(0x11A8000, 0x1000, 0x0)		 = 0 0
+mprotect(0x11AD000, 0x1000, 0x0)		 = 0 0
+mprotect(0x11AE000, 0x1000, 0x0)		 = 0 0
+mprotect(0x11B3000, 0x1000, 0x0)		 = 0 0
+mprotect(0x11A6000, 0x90, 0x1)		 = 0 0
+mprotect(0x11B4000, 0x1000, 0x1)		 = 0 0
+mprotect(0x11A6000, 0x90, 0x3)		 = 0 0
+mprotect(0x11A6000, 0x90, 0x1)		 = 0 0
+getpid(0x0, 0x0, 0x0)		 = 2028 0
+stat64("/AppleInternal\0", 0x7FFEEFBFE650, 0x0)		 = -1 Err#2
+csops(0x7EC, 0x7, 0x7FFEEFBFE180)		 = -1 Err#22
+proc_info(0x2, 0x7EC, 0xD)		 = 64 0
+csops(0x7EC, 0x7, 0x7FFEEFBFD9D0)		 = -1 Err#22
+mmap(0x0, 0x40000, 0x3, 0x1002, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0x11B5000 0
+mmap(0xC000000000, 0x4000000, 0x0, 0x1002, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0xC000000000 0
+mmap(0xC000000000, 0x4000000, 0x3, 0x1012, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0xC000000000 0
+mmap(0x0, 0x2000000, 0x3, 0x1002, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0x2000000 0
+mmap(0x0, 0x210000, 0x3, 0x1002, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0x1500000 0
+mmap(0x0, 0x10000, 0x3, 0x1002, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0x1710000 0
+mmap(0x0, 0x10000, 0x3, 0x1002, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0x1720000 0
+open("/dev/urandom\0", 0x0, 0x0)		 = 3 0
+close(0x3)		 = 0 0
+__pthread_sigmask(0x3, 0x0, 0x1164540)		 = 0 0
+sigaltstack(0x0, 0x7FFEEFBFF930, 0x0)		 = 0 0
+sigaltstack(0x7FFEEFBFF8F0, 0x0, 0x0)		 = 0 0
+__pthread_sigmask(0x3, 0x7FFEEFBFF944, 0x0)		 = 0 0
+sigaction(0x1, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x1, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x2, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x2, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x3, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x3, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x4, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x4, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x5, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x5, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x6, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x6, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x7, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x7, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x8, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x8, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0xA, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0xA, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0xB, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0xB, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0xC, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0xC, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0xD, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0xD, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0xE, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0xE, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0xF, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0xF, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x10, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x10, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x14, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x14, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x17, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x17, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x18, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x18, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x19, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x19, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x1A, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x1A, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x1B, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x1B, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x1C, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x1C, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x1D, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x1D, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x1E, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x1E, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+sigaction(0x1F, 0x0, 0x7FFEEFBFF8F0)		 = 0 0
+sigaction(0x1F, 0x7FFEEFBFF7B8, 0x0)		 = 0 0
+__pthread_sigmask(0x3, 0x1150128, 0x7FFEEFBFF88dtrace: error on enabled probe ID 2172 (ID 161: syscall::write:return): invalid kernel access in action #12 at DIF offset 68
+0)		 = 0 0
+bsdthread_create(0x10525C0, 0xC000030000, 0x70000A712000)		 = 175185920 0
+thread_selfid(0x0, 0x0, 0x0)		 = 451128 0
+__pthread_sigmask(0x3, 0x7FFEEFBFF880, 0x0)		 = 0 0
+sigaltstack(0x0, 0x70000A711E70, 0x0)		 = 0 0
+__pthread_sigmask(0x3, 0x1150128, 0x7FFEEFBFF790)		 = 0 0
+sigaltstack(0x70000A711E30, 0x0, 0x0)		 = 0 0
+__pthread_sigmask(0x3, 0x70000A711E84, 0x0)		 = 0 0
+bsdthread_create(0x10525C0, 0xC000030400, 0x70000A725000)		 = 175263744 0
+thread_selfid(0x0, 0x0, 0x0)		 = 451129 0
+__pthread_sigmask(0x3, 0x7FFEEFBFF790, 0x0)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+sigaltstack(0x0, 0x70000A724E70, 0x0)		 = 0 0
+__pthread_sigmask(0x3, 0x1150128, 0x7FFEEFBFF5E8)		 = 0 0
+sigaltstack(0x70000A724E30, 0x0, 0x0)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+bsdthread_create(0x10525C0, 0xC000030800, 0x70000A738000)		 = 175341568 0
+__pthread_sigmask(0x3, 0x70000A724E84, 0x0)		 = 0 0
+__pthread_sigmask(0x3, 0x7FFEEFBFF5E8, 0x0)		 = 0 0
+thread_selfid(0x0, 0x0, 0x0)		 = 451130 0
+sigaltstack(0x0, 0x70000A737E70, 0x0)		 = 0 0
+sigaltstack(0x70000A737E30, 0x0, 0x0)		 = 0 0
+__pthread_sigmask(0x3, 0x1150128, 0x70000A724D08)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__pthread_sigmask(0x3, 0x70000A737E84, 0x0)		 = 0 0
+bsdthread_create(0x10525C0, 0xC00004C000, 0x70000A74B000)		 = 175419392 0
+__pthread_sigmask(0x3, 0x70000A724D08, 0x0)		 = 0 0
+thread_selfid(0x0, 0x0, 0x0)		 = 451131 0
+sigaltstack(0x0, 0x70000A74AE70, 0x0)		 = 0 0
+psynch_cvsignal(0x1164840, 0x100, 0x0)		 = 257 0
+sigaltstack(0x70000A74AE30, 0x0, 0x0)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__pthread_sigmask(0x3, 0x70000A74AE84, 0x0)		 = 0 0
+psynch_cvwait(0x1164840, 0x100000100, 0x0)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+psynch_cvsignal(0xC00004C380, 0x100, 0x0)		 = 257 0
+psynch_cvwait(0xC00004C380, 0x100000100, 0x0)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+psynch_cvsignal(0xC000030780, 0x100, 0x0)		 = 257 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+psynch_cvwait(0xC000030780, 0x100000100, 0x0)		 = 0 0
+psynch_cvsignal(0xC000030B80, 0x100, 0x0)		 = 257 0
+psynch_cvwait(0xC000030B80, 0x100000100, 0x0)		 = 0 0
+psynch_cvsignal(0x1164840, 0x10000000200, 0x100)		 = 257 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+psynch_cvwait(0x1164840, 0x10100000200, 0x100)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+stat64(".\0", 0xC000066108, 0x0)		 = 0 0
+psynch_cvsignal(0xC00004C380, 0x10000000200, 0x100)		 = 257 0
+psynch_cvwait(0xC00004C380, 0x10100000200, 0x100)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+stat64("/Users/soichiro-taga/dev/src/github.com/midorigreen/go-sandbox/hello\0", 0xC0000782A8, 0x0)		 = 0 0
+fcntl(0x0, 0x3, 0x0)		 = 2 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+psynch_cvsignal(0xC00004C380, 0x20000000300, 0x200)		 = 257 0
+psynch_cvwait(0xC00004C380, 0x20100000300, 0x200)		 = 0 0
+mmap(0x0, 0x40000, 0x3, 0x1002, 0xFFFFFFFFFFFFFFFF, 0x0)		 = 0x1730000 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+fcntl(0x1, 0x3, 0x0)		 = 1 0
+psynch_cvsignal(0xC000030780, 0x10000000200, 0x100)		 = 257 0
+fcntl(0x2, 0x3, 0x0)		 = 1 0
+psynch_cvwait(0xC000030780, 0x10100000200, 0x100)		 = 0 0
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+__semwait_signal(0xA03, 0x0, 0x1)		 = -1 Err#60
+psynch_cvwait(0xC000030780, 0x20100000300, 0x200)		 = -1 Err#260
+psynch_cvwait(0xC000030B80, 0x10100000200, 0x100)		 = -1 Err#260
+psynch_cvwait(0xC00004C380, 0x30100000400, 0x300)		 = -1 Err#260
+
+CALL                                        COUNT
+access                                          1
+bsdthread_register                              1
+exit                                            1
+getpid                                          1
+issetugid                                       1
+proc_info                                       1
+read                                            1
+sysctlbyname                                    1
+write                                           1
+close                                           2
+csops                                           2
+open                                            2
+sysctl                                          2
+fcntl                                           3
+ioctl                                           3
+stat64                                          3
+bsdthread_create                                4
+thread_selfid                                   4
+mmap                                            8
+mprotect                                        8
+psynch_cvsignal                                 8
+sigaltstack                                    10
+psynch_cvwait                                  11
+__pthread_sigmask                              14
+__semwait_signal                               25
+sigaction                                      50
+
