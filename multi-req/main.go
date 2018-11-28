@@ -2,47 +2,81 @@ package main
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/url"
+	"os"
+	"runtime/trace"
+
+	"golang.org/x/sync/errgroup"
 )
 
 func main() {
+	t, _ := os.Create("./trace.out")
+	trace.Start(t)
+	defer trace.Stop()
+
 	sem := make(chan int8, 3)
 
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-
 	words := []string{"りんご", "バナナ", "Apple", "きつね", "ねこ", "たぬき"}
-	mResult := make(chan string, len(words))
-	for _, w := range words {
-		go func(ctx context.Context, w string) {
+	mResult := make([]string, len(words))
+
+	eg, ctx := errgroup.WithContext(context.Background())
+
+	for i, w := range words {
+		i, w := i, w
+		eg.Go(func() error {
 			sem <- 1
-			v := url.Values{}
-			v.Set("q", w)
-			url := fmt.Sprintf("https://www.google.co.jp/search?%v", v.Encode())
 
-			request(ctx, url)
-			mResult <- w
+			body, err := request(ctx, w)
+			if err != nil {
+				<-sem
+				return errors.New("failed")
+			}
+
+			mResult[i] = body
 			<-sem
-		}(ctx, w)
+			return nil
+		})
 	}
 
-	for m := range mResult {
-		fmt.Println(m)
+	if err := eg.Wait(); err != nil {
+		log.Fatalln(err)
 	}
+
+	fmt.Println("DONE")
 }
 
-func request(ctx context.Context, url string) string {
+func request(ctx context.Context, w string) (string, error) {
+	v := url.Values{}
+	v.Set("q", w)
+	url := fmt.Sprintf("https://www.google.co.jp/search?%v", v.Encode())
+
 	fmt.Println(url)
-	r, _ := http.NewRequest("GET", url, nil)
+	r, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return "", err
+	}
 	rctx := r.WithContext(ctx)
 
 	client := http.Client{}
-	res, _ := client.Do(rctx)
+	res, err := client.Do(rctx)
+	if err != nil {
+		return "", err
+	}
 	defer res.Body.Close()
 
-	b, _ := ioutil.ReadAll(res.Body)
-	return string(b)
+	if res.StatusCode != http.StatusOK {
+		return "", errors.New("ERROR")
+	}
+
+	b, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return "", err
+	}
+
+	return string(b), nil
 }

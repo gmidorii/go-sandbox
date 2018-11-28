@@ -8,22 +8,28 @@ import (
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
-	go heavy(ctx)
-
+	go heavy(ctx, "hoge")
 	time.Sleep(3 * time.Second)
 	cancel()
 	fmt.Println("done cancel")
-	time.Sleep(3 * time.Second)
+
+	if true {
+		ctx, cancel = context.WithCancel(context.Background())
+		go heavy(ctx, "fuga")
+		time.Sleep(3 * time.Second)
+	}
+	cancel()
+	fmt.Println("done cancel")
 }
 
-func heavy(ctx context.Context) {
+func heavy(ctx context.Context, s string) {
 	for {
 		select {
 		case <-ctx.Done():
 			fmt.Println("cancel func!!")
 			return
 		case <-time.After(1 * time.Second):
-			fmt.Println("hoge")
+			fmt.Println(s)
 		}
 	}
 }
