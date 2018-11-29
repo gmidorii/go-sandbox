@@ -20,6 +20,6 @@ func BenchmarkGoroutine(b *testing.B) {
 
 func BenchmarkGoroutinePool(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-
+		pool.GoroutinePool()
 	}
 }

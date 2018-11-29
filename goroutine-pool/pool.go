@@ -50,6 +50,47 @@ func Goroutine() []bool {
 	return result
 }
 
+func GoroutinePool() []bool {
+	type input struct {
+		idx int
+		s   []string
+	}
+	type value struct {
+		idx    int
+		result bool
+	}
+	poolSize := 100
+	poolChan := make(chan input, poolSize)
+	rChan := make(chan value, number)
+
+	for i := 0; i < poolSize; i++ {
+		go func() {
+			for {
+				in := <-poolChan
+				r := check(in.s)
+				rChan <- value{idx: in.idx, result: r}
+			}
+		}()
+	}
+
+	for i := 0; i < number; i++ {
+		poolChan <- input{idx: i, s: s}
+	}
+
+	var counter int
+	result := make([]bool, number)
+	for {
+		if counter == number {
+			break
+		}
+		v := <-rChan
+		counter++
+		result[v.idx] = v.result
+	}
+
+	return result
+}
+
 func check(s []string) bool {
 	i, err := strconv.Atoi(s[0])
 	if err != nil {
