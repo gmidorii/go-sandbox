@@ -1,0 +1,22 @@
+basePath: '{{.BasePath}}'
+host: '{{.Host}}'
+info:
+  contact: {}
+  description: xxxx.
+  license: {}
+  title: Swagger test api
+  version: "1.0"
+paths:
+  /ping:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: health check.
+swagger: "2.0"
