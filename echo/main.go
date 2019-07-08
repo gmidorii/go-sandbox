@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
+	_ "github.com/gmidorii/go-sandbox/echo/docs"
 	"github.com/labstack/echo/v4"
 	echoSwagger "github.com/swaggo/echo-swagger"
-	_ "github.com/gmidorii/go-sandbox/echo/docs"
 )
 
 // pingHandler is ping.
