@@ -17,3 +17,4 @@
 echo
 vendor
 *.log
+echo-server
